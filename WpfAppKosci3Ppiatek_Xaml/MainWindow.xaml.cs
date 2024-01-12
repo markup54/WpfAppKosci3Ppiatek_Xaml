@@ -42,7 +42,12 @@ namespace WpfAppKosci3Ppiatek_Xaml
 
         private void czysc_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Rezultaty.Clear();
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Rezultaty.Add(0);
+            }
         }
     }
 }
