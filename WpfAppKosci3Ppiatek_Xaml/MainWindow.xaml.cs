@@ -21,21 +21,23 @@ namespace WpfAppKosci3Ppiatek_Xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<int> Rezultaty { get; set; }
+        public ObservableCollection<Kosc> Rezultaty { get; set; }
+        public int LiczbaKosci { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
-            Rezultaty = new ObservableCollection<int>();
+            LiczbaKosci = 5;
+            Rezultaty = new ObservableCollection<Kosc>();
         }
 
         private void rzuc_btn_Click(object sender, RoutedEventArgs e)
         {
-            Rezultaty.Clear();
+           
             Random random = new Random();  
-            for(int i = 0; i < 10; i++)
+            foreach(Kosc k in Rezultaty)
             {
-                Rezultaty.Add(random.Next(1,7));
+                k.Wartosc = random.Next(1, 7);
             }
 
         }
@@ -44,9 +46,9 @@ namespace WpfAppKosci3Ppiatek_Xaml
         {
             Rezultaty.Clear();
             
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < LiczbaKosci; i++)
             {
-                Rezultaty.Add(0);
+                Rezultaty.Add(new Kosc());
             }
         }
     }
