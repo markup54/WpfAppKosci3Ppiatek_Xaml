@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfAppKosci3Ppiatek_Xaml.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppKosci3Ppiatek_Xaml"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Button 
+            Content="Rzuć"
+            x:Name="rzuc_btn"
+            DockPanel.Dock="Bottom"
+            Click="rzuc_btn_Click"/>
+        <Button
+            Content="Wyczyść"
+            x:Name="czysc_btn"
+            DockPanel.Dock="Bottom"
+            Click="czysc_btn_Click"/>
+        <ItemsControl
+            ItemsSource="{Binding Rezultaty}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </DockPanel>
+</Window>
