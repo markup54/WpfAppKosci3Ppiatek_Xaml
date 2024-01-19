@@ -26,10 +26,7 @@ namespace WpfAppKosci3Ppiatek_Xaml
         private bool _czyZaznaczona;
         public bool CzyZaznaczona
         {
-            get
-            {
-                return _czyZaznaczona;
-            }
+            get => _czyZaznaczona;
             set
             {
                 _czyZaznaczona = value;

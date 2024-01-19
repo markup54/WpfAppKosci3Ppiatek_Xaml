@@ -1,0 +1,3 @@
+1. Oblicz punkty 
+	para,trojka,kareta,poker (1 metoda)
+	dwie pary, full (2+3)

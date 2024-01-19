@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:WpfAppKosci3Ppiatek_Xaml"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Column="1" ItemsSource="{Binding Punkciki}"/>
+        <DockPanel>
         <Button 
             Content="Rzuć"
             x:Name="rzuc_btn"
@@ -26,49 +35,119 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
+                    <Button Click="Button_Click">
                     <Image>
                         <Image.Style>
                             <Style TargetType="Image"> 
                                 <Setter Property="Source" 
                                         Value="kostkapusta.png"/>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="1">
-                                        <Setter Property="Source"
-                                                Value="kostka1.png"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="2">
-                                        <Setter Property="Source"
-                                                Value="kostka2.png"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="3">
-                                        <Setter Property="Source"
-                                                Value="kostka3.png"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="4">
-                                        <Setter Property="Source"
-                                                Value="kostka4.png"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="5">
-                                        <Setter Property="Source"
-                                                Value="kostka5.png"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Wartosc}"
-                                                 Value="6">
-                                        <Setter Property="Source"
-                                                Value="kostka6.png"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="1"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka1.png"/>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="1"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka1.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+                                    
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="2"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka2.png"/>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="2"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka2.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+
+
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="3"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka3.png"/>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="3"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka3.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="4"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka4.png"/>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="4"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka4.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="5"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka5.png"/>
+                                            
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="5"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka5.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="6"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka6.png"/>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding Wartosc}" Value="6"/>
+                                                <Condition Binding="{Binding CzyZaznaczona}" Value="true"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Source" Value="kostka6.png"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
                             </Style>
                            
                         </Image.Style>
                     </Image>
+                    </Button>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
     </DockPanel>
+    </Grid>
 </Window>
