@@ -32,7 +32,7 @@ namespace WpfAppKosci3Ppiatek_Xaml
                 _czyZaznaczona = value;
                 if(PropertyChanged != null)
                 {
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(_czyZaznaczona))); 
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(CzyZaznaczona))); 
                 }
             }
         }

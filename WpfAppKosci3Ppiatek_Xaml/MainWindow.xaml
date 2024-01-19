@@ -45,7 +45,7 @@
                                         <MultiDataTrigger>
                                             <MultiDataTrigger.Conditions>
                                                 <Condition Binding="{Binding Wartosc}" Value="1"/>
-                                                <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
+                                                    <Condition Binding="{Binding CzyZaznaczona}" Value="false"/>
                                             </MultiDataTrigger.Conditions>
                                             <Setter Property="Source" Value="kostka1.png"/>
                                         </MultiDataTrigger>

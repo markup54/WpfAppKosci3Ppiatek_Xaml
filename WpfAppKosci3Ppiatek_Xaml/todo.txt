@@ -1,3 +1,11 @@
 1. Oblicz punkty 
-	para,trojka,kareta,poker (1 metoda)
+	para,trojka,kareta,poker(5 takich samych) (1 metoda)
 	dwie pary, full (2+3)
+	ma³y i du¿y strit
+
+2. Ogranicz liczbê rzutów do 3, po trzech rzutach musi byæ coœ zaznaczone 
+	i wtedy odblokowuj¹ siê rzuty -> przyciskiem lub checkbox(trudniej)
+
+3. Oblicza siê suma wszystkich zatwierdzonych punktów i wyœwietla pod datagrid
+
+4. Je¿eli ktoœ coœ zatwierdzi nie mo¿e potem tego zmieniæ (b. trudne)
